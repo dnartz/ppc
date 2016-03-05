@@ -1,0 +1,63 @@
+pragma FP_CONTRACT
+include stdio
+
+float complex complex_test
+double complex complex_test
+l_double complex complex_test
+float imaginary imaginary_tset
+double imaginary imaginary_tset
+l_double imaginary imaginary_tset
+
+for_test() : void ->
+    for i in a when i is true by 2 do NULL
+    for i in a when i is true do NULL
+    for i in a do NULL
+
+    for i from 1 to 100 when i is true by 2 do NULL
+    for i from 1 to 100 when i is true do NULL
+    for i from 1 to 100 do NULL
+
+    do test a while ture
+    while something do NULL
+
+export str = "Hello World!" : const *const char
+
+func_export() : *char ->
+    return "fsdkjfhkwe"
+
+@if __WIN32
+    "C"
+@else @if LINUX
+    "ha"
+
+@anon with, params
+main(argc : int, argv : *char[argc]) : int ->
+    sum = 0 : int
+
+    for i : int from 1 to 100
+        sum += i
+
+    printf "%s\n", str
+    printf sum
+
+int optr() ->
+    @packed
+    struct a
+        int c, b
+    s
+
+void label_test() ->
+    if cond
+        if cond 2
+            if cond 3
+                a += 1
+                b += 2
+        @cold
+        label2:
+            return
+    @hot
+    label1:
+        return
+
+export func_export as func,
+       main as main_export
